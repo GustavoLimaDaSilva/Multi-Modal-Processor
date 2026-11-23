@@ -1,12 +1,59 @@
-html, body {
+:root {
+  --primary-color: #f3f3f5;
+  --primary-color-variation: #c1c5cd;
+  --accent-color: #ef7b2c;
+  --shadow-color: gray;
+  --8px-spacing: 8px;
+  --16px-spacing: 16px;
+  --24px-spacing: 24px
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
-html, body, * {
+html,
+body,
+* {
   box-sizing: border-box;
 }
 
 body {
-  background-color: white;
+  background-image: linear-gradient(
+    to bottom,
+    var(--primary-color),
+    var(--primary-color-variation)
+  );
+}
+
+.vertical-align {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.form {
+  margin-inline: auto;
+}
+
+.form-label {
+  font-size: 1.3rem;
+  font-weight: bolder;
+  display: block;
+  margin-block: var(--24px-spacing) var(--8px-spacing);
+}
+
+.form-label:first-of-type {
+  margin-top: 0;
+}
+
+.DORFic-card {
+  background-color: var(--accent-color);
+  width: fit-content;
+  padding:var(--16px-spacing);
+  border-radius: 10px;
+  color: var(--primary-color);
+  box-shadow: 2px 2px 4px var(--shadow-color);
 }

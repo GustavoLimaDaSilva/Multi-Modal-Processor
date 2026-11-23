@@ -6,7 +6,9 @@ import InsertPrompt from "./components/InsertPrompt";
 function App() {
   const [dataModality, setDataModality] = useState<DataModalities | null>(null);
   return (
-    <form>
+    <>
+    <div className="vertical-align">
+    <form className="form DORFic-card">
       <Select setDataModality={setDataModality} />
       {dataModality === "PDF" ? (
         <input type="file" className="file-input" />
@@ -16,6 +18,8 @@ function App() {
       <InsertPrompt dataModality={dataModality}/>
       <button type="submit">Send</button>
     </form>
+    </div>
+    </>
   );
 }
 
