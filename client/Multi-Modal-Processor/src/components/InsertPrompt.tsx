@@ -5,12 +5,10 @@ type props = {
 };
 
 export default function InsertPrompt({ dataModality }: props) {
-  const defaultPrompt = `Summarize ${dataModality === null ? "these informations" : `this ${dataModality}`} and extract insights`;
 
   return (
     <>
-      <h2>Send Instructions</h2>
-      <p>{defaultPrompt}</p>
+      <label htmlFor="prompt-input" className="form-label">Send Instructions</label>
       <textarea
         name="prompt-input"
         className="prompt-input"

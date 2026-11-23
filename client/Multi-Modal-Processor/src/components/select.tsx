@@ -7,7 +7,7 @@ type props = {
 export default function Select({ setDataModality }: props) {
   return (
     <>
-      <h2>Select a modality</h2>
+      <label htmlFor="modalities" className="form-label">Select a modality</label>
       <select name="modalities" defaultValue="" onClick={setSelectedOpt}>
         <option value="" disabled>
           Choose a data format
