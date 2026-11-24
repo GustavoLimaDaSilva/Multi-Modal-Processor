@@ -1,5 +1,5 @@
 import {onInit} from "firebase-functions";
-
+import PDFRoute from "./PDF.js";
 const express = (await import("express")).default;
 const cors = (await import("cors")).default;
 
@@ -20,6 +20,7 @@ app.use(
 
 onInit(() => {
   app.listen(port, () => {
+    app.use("/PDF", PDFRoute);
     console.log(`Example app listening on port ${port}`);
   });
 });

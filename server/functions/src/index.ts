@@ -1,9 +1,23 @@
 import {setGlobalOptions} from "firebase-functions";
 import {onRequest} from "firebase-functions/https";
-import {initializeApp} from "firebase-admin/app";
-
+import {cert, initializeApp, ServiceAccount} from "firebase-admin/app";
+import {getStorage} from "firebase-admin/storage";
+import fs from "node:fs";
 import app from "./API/index.js";
 
-export const api = onRequest(app);
-initializeApp();
+
+const raw = fs.readFileSync(
+  new URL("../multi-modal-processor-keys.json", import.meta.url),
+  "utf-8",
+);
+const serviceAccount = JSON.parse(raw) as ServiceAccount;
+
+const firebaseApp = initializeApp({
+  credential: cert(serviceAccount),
+  storageBucket: "multi-modal-processor.firebasestorage.app",
+});
+
+getStorage(firebaseApp);
+
+onRequest(app);
 setGlobalOptions({maxInstances: 10});
