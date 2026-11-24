@@ -7,7 +7,7 @@ import app from "./API/index.js";
 
 
 const raw = fs.readFileSync(
-  new URL("../multi-modal-processor-keys.json", import.meta.url),
+  new URL("../multi-modal-processor-31d525de137b.json", import.meta.url),
   "utf-8",
 );
 const serviceAccount = JSON.parse(raw) as ServiceAccount;
