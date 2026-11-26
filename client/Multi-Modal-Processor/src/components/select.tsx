@@ -1,7 +1,7 @@
-import type { DataModalities } from "../types";
+import type { DataModalities, StateSetter } from "../types";
 
 type props = {
-  setDataModality: React.Dispatch<React.SetStateAction<DataModalities | null>>;
+  setDataModality: StateSetter<DataModalities | null>;
 };
 
 export default function Select({ setDataModality }: props) {
