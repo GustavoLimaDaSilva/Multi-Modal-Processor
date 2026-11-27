@@ -2,4 +2,4 @@ export type StateSetter<T> = React.Dispatch<React.SetStateAction<T>>
 
 export type DataModalities = "website" | "PDF";
 
-export type {MyFormData} from "../../../shared-types"
+export type {MyFormData} from "../../../server/functions/src/types"
